@@ -29,9 +29,9 @@ with interactive graph analytics and visualization. In: AAAI, https://networkrep
 # Methodology
 The methodology of the project revolves around two major steps, namely obtaining the embeddings from the graph and then use a classifier to obtain the final accuracy results. We studied two methods to obtain the embeddings from the graph. The first method is a Laplacian spectral-based method, and the second one is an unsupervised random walk based node2vec method.
 
-
+<div align="center">
 <img src="https://github.com/dasjyotishka/Utilisation-of-machine-learning-algorithms-for-the-detection-of-enzymes-from-protein-graphs/assets/55792433/008f290f-df5a-4881-901e-9cb31b6a60aa" alt="Generating embeddings through a Laplacian spectral-based method" width="50%">
-
+</div>
 
 # Results
 A comparison of the classification accuracy obtained using different approaches are tabulated in Table 1. The rows headers of the table correspond to the algirithms used to generate the embeddings while the column headers correspond to the choice of the machine learning classifier.
