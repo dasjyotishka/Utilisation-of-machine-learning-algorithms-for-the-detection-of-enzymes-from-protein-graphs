@@ -1,5 +1,7 @@
 # Utilisation of machine learning algorithms incorporating Laplacian and unsupervised methods for the detection of enzymes from protein graphs
-This repository contains the report and a Python notebook containing the code for the implementation of a project that seeks to investigate the use of different ML methods for the detection of enzymes from protein graphs.
+This repository contains the report and code for the implementation of a project that seeks to investigate the use of different ML methods for the detection of enzymes from protein graphs. 
+
+To read about the project in detail, please consult the report attached. The implementation code is provided in a Python notebook.
 
 # Authors and Contributors
 1. Jyotishka Das
@@ -24,10 +26,17 @@ A potential application of being able to classify molecular structures is to pre
 The publicly available Proteins Full (PF) network dataset was used for this work (Rossi, R.A., Ahmed, N.K.: The network data repository
 with interactive graph analytics and visualization. In: AAAI, https://networkrepository.com, 2015).
 
+# Methodology
+The methodology of the project revolves around two major steps, namely obtaining the embeddings from the graph and then use a classifier to obtain the final accuracy results. We studied two methods to obtain the embeddings from the graph. The first method is a Laplacian spectral-based method, and the second one is an unsupervised random walk based node2vec method.
+
+![Algorithm](https://github.com/dasjyotishka/Utilisation-of-machine-learning-algorithms-for-the-detection-of-enzymes-from-protein-graphs/assets/55792433/008f290f-df5a-4881-901e-9cb31b6a60aa)
+
+
 # Results
 A comparison of the classification accuracy obtained using different approaches are tabulated in Table 1. The rows headers of the table correspond to the algirithms used to generate the embeddings while the column headers correspond to the choice of the machine learning classifier.
 
   #### Table 1. Comparison of the classification accuracy obtained using different approaches
+
 | Model         | Laplacian Eigenvalues | Node2vec Embeddings |
 |---------------|----------|-----------------------|
 | Random Forest | 0.75     | 0.68                  | 
@@ -37,4 +46,18 @@ A comparison of the classification accuracy obtained using different approaches 
 | LightGBM      | 0.73     | 0.66                  |                     
 
 
-We have tried to benchmark our model for the detection of enzymes from protein graphs against many recent state-ofthe- arts deep learning models utilising Graph neural network methods on the same Protein Full (PF) dataset in Table 2. The proposed method gives comparable performance in terms of accuracy when compared with a Graph Attention Network (GAN) or a Graph Convolutional Network (GCN), whereas more complex methods like Graph Isomorphism Network (GIN) or Deep Graph Convolutional Neural Network (DGCNN) gives a better classification accuracy. On the contrary, these deep networks take huge computation time to train their networks.We were unable to find a comparison of the time taken to train the models in the available literatures as a means of benchmarking, but available literatures show that these deep learning algorithms take considerable time for training owing to the repeated number of trials to arrive at the right set of hyperparameters. Also, these deeper networks extract the embeddings from the graph automatically, and as such it puts a question on their human interpretability.
+We have tried to benchmark our model for the detection of enzymes from protein graphs against many recent state-ofthe- arts deep learning models utilising Graph neural network methods on the same Protein Full (PF) dataset in Table 2. 
+
+  #### Table 2. Comparison of the performance of the classification accuracy with recent “deep learning" based graphical models on the Protein Full dataset
+  | Algorithm                                          | Accuracy | Reference               |
+|----------------------------------------------------|----------|-------------------------|
+| Graph Isomorphism Network (GIN)                    | 0.84     | Xu et al.      |
+| Deep Graph Convolutional Neural Network (DGCNN)    | 0.81     | Zhang et al.     |
+| Graph Convolutional Network (GCN)                  | 0.76     | Kipf & Welling.  |
+| Graph Attention Network (GAT)                      | 0.75     | Velickovic et al.|
+| Laplacian embeddings with Random Forest/SVM        | 0.75     | Proposed Method         |
+
+  
+  The proposed method gives comparable performance in terms of accuracy when compared with a Graph Attention Network (GAN) or a Graph Convolutional Network (GCN), whereas more complex methods like Graph Isomorphism Network (GIN) or Deep Graph Convolutional Neural Network (DGCNN) gives a better classification accuracy. On the contrary, these deep networks take huge computation time to train their networks.We were unable to find a comparison of the time taken to train the models in the available literatures as a means of benchmarking, but available literatures show that these deep learning algorithms take considerable time for training owing to the repeated number of trials to arrive at the right set of hyperparameters. Also, these deeper networks extract the embeddings from the graph automatically, and as such it puts a question on their human interpretability.
+
+
