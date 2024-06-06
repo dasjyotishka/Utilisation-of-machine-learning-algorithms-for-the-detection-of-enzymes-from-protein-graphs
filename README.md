@@ -28,13 +28,13 @@ with interactive graph analytics and visualization. In: AAAI, https://networkrep
 A comparison of the classification accuracy obtained using different approaches are tabulated in Table 1. The rows headers of the table correspond to the algirithms used to generate the embeddings while the column headers correspond to the choice of the machine learning classifier.
 
   #### Table 1. Comparison of the classification accuracy obtained using different approaches
-| Model         | Accuracy | Laplacian Eigenvalues | Node2vec Embeddings |
-|---------------|----------|-----------------------|---------------------|
-| Random Forest | 0.75     | 0.68                  |                     |
-| XGBoost       | 0.72     | 0.67                  |                     |
-| CatBoost      | 0.73     | 0.69                  |                     |
-| SVM           | 0.75     | 0.69                  |                     |
-| LightGBM      | 0.73     | 0.66                  |                     |
+| Model         | Laplacian Eigenvalues | Node2vec Embeddings |
+|---------------|----------|-----------------------|
+| Random Forest | 0.75     | 0.68                  | 
+| XGBoost       | 0.72     | 0.67                  |     
+| CatBoost      | 0.73     | 0.69                  |                     
+| SVM           | 0.75     | 0.69                  |                     
+| LightGBM      | 0.73     | 0.66                  |                     
 
 
 We have tried to benchmark our model for the detection of enzymes from protein graphs against many recent state-ofthe- arts deep learning models utilising Graph neural network methods on the same Protein Full (PF) dataset in Table 2. The proposed method gives comparable performance in terms of accuracy when compared with a Graph Attention Network (GAN) or a Graph Convolutional Network (GCN), whereas more complex methods like Graph Isomorphism Network (GIN) or Deep Graph Convolutional Neural Network (DGCNN) gives a better classification accuracy. On the contrary, these deep networks take huge computation time to train their networks.We were unable to find a comparison of the time taken to train the models in the available literatures as a means of benchmarking, but available literatures show that these deep learning algorithms take considerable time for training owing to the repeated number of trials to arrive at the right set of hyperparameters. Also, these deeper networks extract the embeddings from the graph automatically, and as such it puts a question on their human interpretability.
